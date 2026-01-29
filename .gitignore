@@ -31,6 +31,11 @@ dashboard/outputs/
 *.jpeg
 *.pdf
 *.html
+!reports_vercel/**/*.html
+!reports_vercel/**/*.png
+!reports_vercel/**/*.jpg
+!reports_vercel/**/*.jpeg
+!reports_vercel/**/assets/**
 
 # IDE files
 .vscode/

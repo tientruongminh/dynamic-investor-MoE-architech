@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo Dự án - Dynamic Investor MoE Architecture</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --bg: #0f172a;
+            --text: #f8fafc;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #334155;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #60a5fa;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .card:hover .btn {
+            background-color: #1d4ed8;
+        }
+
+        .footer {
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Báo cáo Dự án Alpha MoE</h1>
+    <div class="container">
+        <a href="midterm/final_report.html" class="card">
+            <div>
+                <h2>Báo cáo Giữa kỳ</h2>
+                <p>Phân tích nền tảng, các yếu tố Alpha cơ bản và thiết kế hệ thống Mixture of Experts ban đầu.</p>
+            </div>
+            <div class="btn">Xem báo cáo</div>
+        </a>
+        <a href="final/final_report.html" class="card">
+            <div>
+                <h2>Báo cáo Cuối kỳ</h2>
+                <p>Kết quả backtest toàn diện, mạng Gating điều phối chuyên gia và tích hợp LLM Supervisor.</p>
+            </div>
+            <div class="btn">Xem báo cáo</div>
+        </a>
+    </div>
+    <div class="footer">
+        &copy; 2026 Dynamic Investor MoE Architecture
+    </div>
+</body>
+
+</html>

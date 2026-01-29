@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo Giữa Kỳ: Nghiên Cứu Alpha Factor</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+            padding: 50px 60px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1a1a2e;
+            font-size: 2.2em;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 25px;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #2980b9;
+            border-left: 6px solid #3498db;
+            padding-left: 20px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        h4 {
+            color: #555;
+            margin-top: 20px;
+            font-size: 1.05em;
+        }
+
+        .chapter {
+            background: #f8f9fa;
+            padding: 30px 35px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+        }
+
+        .finding {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            padding: 20px 25px;
+            border-left: 6px solid #28a745;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .finding strong {
+            color: #155724;
+        }
+
+        .problem {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            padding: 20px 25px;
+            border-left: 6px solid #dc3545;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .problem strong {
+            color: #721c24;
+        }
+
+        .solution {
+            background: linear-gradient(135deg, #cce5ff 0%, #b8daff 100%);
+            padding: 20px 25px;
+            border-left: 6px solid #007bff;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .solution strong {
+            color: #004085;
+        }
+
+        .validated {
+            background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+            padding: 20px 25px;
+            border-left: 6px solid #17a2b8;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .validated strong {
+            color: #0c5460;
+        }
+
+        .theory {
+            background: linear-gradient(135deg, #e2d4f0 0%, #d4c4e3 100%);
+            padding: 20px 25px;
+            border-left: 6px solid #6f42c1;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.95em;
+        }
+
+        th,
+        td {
+            border: 1px solid #dee2e6;
+            padding: 14px 18px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #e9ecef;
+        }
+
+        .highlight-row {
+            background-color: #d4edda !important;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-caption {
+            text-align: center;
+            font-style: italic;
+            color: #6c757d;
+            margin-top: -15px;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+        }
+
+        .highlight-number {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .evolution-arrow {
+            text-align: center;
+            font-size: 2em;
+            color: #3498db;
+            margin: 20px 0;
+        }
+
+        .toc {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .toc ul {
+            list-style-type: none;
+            padding-left: 0;
+            columns: 2;
+        }
+
+        .toc li {
+            padding: 10px 0;
+            border-bottom: 1px dotted #dee2e6;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .conclusion-box h2 {
+            color: #00d4ff;
+            border-left-color: #00d4ff;
+        }
+
+        .conclusion-box p,
+        .conclusion-box li {
+            color: #e0e0e0;
+        }
+
+        .exec-summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .exec-summary h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .factor-card {
+            background: white;
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        .factor-card h4 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+
+        .status-validated {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .status-failed {
+            color: #dc3545;
+            font-weight: bold;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .toc ul {
+                columns: 1;
+            }
+
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- HEADER -->
+        <h1>BÁO CÁO GIỮA KỲ<br>NGHIÊN CỨU ALPHA FACTOR XÁC SUẤT</h1>
+        <p class="subtitle">
+            <strong>Zhou & Bishop Alpha Framework</strong><br>
+            Phương pháp: Kết hợp Tư duy Tài chính Định lượng (Zhou) và Toán học Xác suất (Bishop)<br>
+            Ngày: 18/01/2026 | Universe: NASDAQ Large-Cap | Period: 2016-2026
+        </p>
+
+        <!-- EXECUTIVE SUMMARY -->
+        <div class="exec-summary">
+            <h3>TÓM TẮT ĐIỀU HÀNH</h3>
+            <p><strong>Mục tiêu:</strong> Xây dựng bộ Alpha Factors có khả năng dự báo lợi nhuận cổ phiếu, được thiết kế
+                dựa trên phân tích EDA kỹ lưỡng và được kiểm chứng bằng phương pháp thống kê nghiêm ngặt.</p>
+
+            <p><strong>Kết quả chính:</strong></p>
+            <ul>
+                <li>Bộ Factor v1 (5 factors) → Chỉ 1/5 có ý nghĩa thống kê, phát hiện multicollinearity cao (0.83-0.94)
+                </li>
+                <li>Bộ Factor v2 (12 factors, EDA-driven) → 3/12 có ý nghĩa thống kê (p<0.05), tất cả đều pass
+                        Behavioral Validation</li>
+                <li>Factors mạnh nhất: MOM_12M (IR=1.21), CONSISTENCY (IR=0.79), MRD (IR=0.68)</li>
+            </ul>
+        </div>
+
+        <!-- MỤC LỤC -->
+        <div class="toc">
+            <h3>MỤC LỤC</h3>
+            <ul>
+                <li><a href="#ch1">1. Quản Trị Dữ Liệu (Data Governance)</a></li>
+                <li><a href="#ch2">2. EDA "Khám Nghiệm" & Tiền Xử Lý</a></li>
+                <li><a href="#ch3">3. Factor Research v1: Bộ Factor Ban Đầu</a></li>
+                <li><a href="#ch4">4. Chẩn Đoán Vấn Đề & Redesign</a></li>
+                <li><a href="#ch5">5. Factor Research v2: EDA-Driven Design</a></li>
+                <li><a href="#ch6">6. Expert Validation (Kiểm Chứng Hành Vi)</a></li>
+                <li><a href="#ch7">7. Kết Luận: Data → Factors</a></li>
+            </ul>
+        </div>
+
+        <!-- CHƯƠNG 1: DATA GOVERNANCE -->
+        <div class="chapter" id="ch1">
+            <h2>Chương 1: Quản Trị Vũ Trụ Đầu Tư</h2>
+
+            <h3>1.1. Quy Trình Lọc Universe</h3>
+            <p>Xuất phát từ toàn bộ thị trường NASDAQ (~3,500 mã), chúng tôi áp dụng quy trình lọc nghiêm ngặt:</p>
+
+            <table>
+                <tr>
+                    <th>Bước</th>
+                    <th>Tiêu Chí</th>
+                    <th>Số Mã Còn</th>
+                    <th>Ví Dụ Loại Bỏ</th>
+                </tr>
+                <tr>
+                    <td>0. Ban đầu</td>
+                    <td>-</td>
+                    <td>3,500+</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>1. Delisted/M&A</td>
+                    <td>Còn niêm yết 2026</td>
+                    <td>~2,500</td>
+                    <td>TWTR (X), ATVI (MSFT)</td>
+                </tr>
+                <tr>
+                    <td>2. Thanh khoản</td>
+                    <td>Volume > $50M/ngày</td>
+                    <td>~800</td>
+                    <td>Penny stocks, OTC</td>
+                </tr>
+                <tr>
+                    <td>3. Data Coverage</td>
+                    <td>> 70% dữ liệu</td>
+                    <td>531</td>
+                    <td>IPO < 2 năm (RIVN, COIN)</td>
+                </tr>
+                <tr>
+                    <td>4. Tiền xử lý</td>
+                    <td>Loại outliers, sector nhỏ</td>
+                    <td><strong>488</strong></td>
+                    <td>Stocks biến động > 300%/ngày</td>
+                </tr>
+            </table>
+
+            <div class="finding">
+                <strong>Kết quả:</strong> Universe cuối cùng gồm 488 mã NASDAQ Large-Cap, đại diện >95% vốn hóa thị
+                trường,
+                với 2,515 ngày giao dịch (10 năm: 2016-2026).
+            </div>
+        </div>
+
+        <!-- CHƯƠNG 2: EDA -->
+        <div class="chapter" id="ch2">
+            <h2>Chương 2: EDA "Khám Nghiệm" và Tiền Xử Lý</h2>
+
+            <p>Mỗi phát hiện từ EDA dẫn đến một quyết định tiền xử lý cụ thể. Đây là nền tảng cho việc thiết kế factors
+                sau này.</p>
+
+            <h3>2.1. Phát Hiện 1: Topology Dữ Liệu Thiếu</h3>
+            <img src="../outputs/01_missing_heatmap.png" alt="Missing Heatmap">
+            <p class="img-caption">Hình 2.1: Heatmap dữ liệu thiếu - Màu đỏ = thiếu, Vàng = có dữ liệu</p>
+
+            <div class="finding">
+                <strong>Phát Hiện:</strong>
+                <ul>
+                    <li>Tổng ô thiếu: <span class="highlight-number">52,943</span> (3.96%)</li>
+                    <li>Dạng "Block": IPO stocks (ABNB, RIVN) thiếu toàn bộ nửa đầu giai đoạn</li>
+                    <li>Dạng "Scattered": Gaps ngẫu nhiên do lỗi API</li>
+                </ul>
+            </div>
+            <div class="solution">
+                <strong>Quyết Định Tiền Xử Lý:</strong> Tiered Interpolation - Gap ≤3d: Forward Fill, 4-10d: Linear,
+                11-20d: Spline, >20d: Loại bỏ
+            </div>
+
+            <h3>2.2. Phát Hiện 2: Fat Tails (Đuôi Béo)</h3>
+            <img src="../outputs/03_qq_plot.png" alt="QQ Plot">
+            <p class="img-caption">Hình 2.2: Q-Q Plot cho thấy đuôi phân phối thực tế nặng hơn phân phối chuẩn</p>
+
+            <div class="finding">
+                <strong>Phát Hiện:</strong>
+                <ul>
+                    <li>Kurtosis trung bình: <span class="highlight-number">15.92</span> (phân phối chuẩn = 0)</li>
+                    <li>Lợi nhuận cực đại: +347.5%, cực tiểu: -85.2% trong 1 ngày</li>
+                    <li>Outliers (>3 IQR): 25,397 data points</li>
+                </ul>
+            </div>
+            <div class="solution">
+                <strong>Quyết Định:</strong>
+                <ol>
+                    <li>Dùng RobustScaler (Median/IQR) thay vì StandardScaler (Mean/Std)</li>
+                    <li>Winsorization tại 0.5%-99.5% percentile</li>
+                </ol>
+            </div>
+            <div class="theory">
+                <strong>Ý Nghĩa Cho Factor Design:</strong> Fat tails xác nhận cần thiết kế factor VOL (volatility),
+                KURT (kurtosis), DRAWDOWN để capture risk exposure. Các factor này sẽ được thêm vào v2.
+            </div>
+
+            <h3>2.3. Phát Hiện 3: Phân Bố Ngành Mất Cân Bằng</h3>
+            <img src="../outputs/05_sector_distribution.png" alt="Sector Distribution">
+            <p class="img-caption">Hình 2.3: Công nghệ chiếm ưu thế với ~150/488 mã</p>
+
+            <div class="finding">
+                <strong>Phát Hiện:</strong> Technology: ~150 mã, Energy: chỉ 2-3 mã → Sector-based factors cần đủ mẫu
+            </div>
+            <div class="solution">
+                <strong>Quyết Định:</strong> Loại bỏ sectors có <3 mã. Thiết kế MRD factor để đo hiệu suất tương đối
+                    trong ngành. </div>
+
+                    <h3>2.4. Phát Hiện 4: Tính Dừng (Stationarity)</h3>
+                    <img src="../outputs/04_acf_plot.png" alt="ACF Plot">
+                    <p class="img-caption">Hình 2.4: ACF của Giá (không dừng) vs Lợi nhuận (dừng)</p>
+
+                    <div class="finding">
+                        <strong>Phát Hiện:</strong>
+                        <ul>
+                            <li>Giá: ACF gần 1 ở mọi lag → Không dừng (non-stationary)</li>
+                            <li>Returns: ACF rơi về 0 nhanh → Dừng (stationary)</li>
+                            <li>ADF test: 100% stocks có returns dừng (p<0.05)< /li>
+                        </ul>
+                    </div>
+                    <div class="solution">
+                        <strong>Quyết Định:</strong> Tất cả factors tính trên Returns, không phải Prices
+                    </div>
+            </div>
+
+            <!-- CHƯƠNG 3: FACTOR v1 -->
+            <div class="chapter" id="ch3">
+                <h2>Chương 3: Factor Research v1 - Bộ Factor Ban Đầu</h2>
+
+                <h3>3.1. Thiết Kế Ban Đầu: 5 Factors</h3>
+                <p>Dựa trên literature về Probabilistic Alpha, chúng tôi thiết kế 5 factors:</p>
+
+                <table>
+                    <tr>
+                        <th>Factor</th>
+                        <th>Tên Đầy Đủ</th>
+                        <th>Công Thức / Định Nghĩa</th>
+                        <th>Nguồn Gốc (Origin)</th>
+                    </tr>
+                    <tr>
+                        <td><strong>BTP</strong></td>
+                        <td>Bayesian Trend Persistence</td>
+                        <td>T-statistic của hồi quy tuyến tính trên log(price)</td>
+                        <td><em>Custom (Zhou et al.)</em> - Biến thể của Trend Strength</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RIE</strong></td>
+                        <td>Relative Information Entropy</td>
+                        <td>Shannon Entropy ($H = -\sum p_i \log p_i$) của phân phối returns</td>
+                        <td><em>Novel Design</em> - Ứng dụng Lý thuyết Thông tin</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MRD</strong></td>
+                        <td>Mahalanobis Regime Distance</td>
+                        <td>Khoảng cách Mahalanobis so với trọng tâm Sector (Clustering)</td>
+                        <td><em>Custom</em> - Lai ghép giữa Statistical Distance & Relative Value</td>
+                    </tr>
+                    <tr>
+                        <td><strong>KMD</strong></td>
+                        <td>Kernel Momentum Decay</td>
+                        <td>Momentum tích lũy trọng số Gaussian (trọng số giảm dần theo thời gian)</td>
+                        <td><em>Custom</em> - Cải tiến từ Time-Weighted Momentum</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RSVS</strong></td>
+                        <td>Robust Skewness Volatility Score</td>
+                        <td>Tỷ lệ giữa biến động chiều lên (Upside) và chiều xuống (Downside)</td>
+                        <td><em>Custom</em> - Biến thể của Omega Ratio</td>
+                    </tr>
+                </table>
+                <div class="theory">
+                    <strong>💡 Ghi Chú Về Thiết Kế Factor:</strong>
+                    Bộ factor v1 này được chúng tôi tự thiết kế (Custom/Novel Design) dựa trên các lý thuyết xác suất
+                    nâng cao, không phải là các chỉ số kỹ thuật thông thường (như RSI, MACD). Mục tiêu là tìm kiếm các
+                    tín hiệu phi tuyến tính (Non-linear) mà thị trường có thể chưa khai thác hết.
+                </div>
+
+                <h3>3.2. Kết Quả IC/IR Test (Long-term)</h3>
+                <div class="theory">
+                    <strong>Thông số kiểm định (Test Metrics):</strong><br>
+                    <ul>
+                        <li><strong>Rank IC (Spearman):</strong> Chúng tôi sử dụng tương quan hạng (Rank) thay vì giá
+                            trị thô (Pearson).
+                            <br><em>Công thức:</em>
+                            $$ IC_t = \rho(\text{rank}(F_t), \text{rank}(R_{t+1})) = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
+                            $$
+                            Trong đó $d_i$ là chênh lệch thứ hạng giữa Factor và Return của cổ phiếu $i$.
+                            <br><em>Lý do (EDA-Driven):</em> Như đã phát hiện ở Chương 2, dữ liệu có <strong>Fat Tails
+                                (Kurtosis ~16)</strong> và nhiều Outliers. Rank IC giúp loại bỏ nhiễu từ các giá trị cực
+                            đoan này, cho kết quả trung thực hơn.
+                        </li>
+                        <li><strong>t-stat & p-value:</strong> Đo lường ý nghĩa thống kê.
+                            <ul>
+                                <li>Nếu <code>|t-stat| > 1.96</code> (tương ứng <code>p-value < 0.05</code>), ta có độ
+                                    tin cậy 95% rằng kết quả không phải do ngẫu nhiên.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Factor</th>
+                        <th>Mean IC</th>
+                        <th>t-stat</th>
+                        <th>p-value</th>
+                        <th>IR</th>
+                        <th>Kết Quả</th>
+                    </tr>
+                    <tr>
+                        <td>BTP</td>
+                        <td>-0.0027</td>
+                        <td>-0.82</td>
+                        <td>0.415</td>
+                        <td>-0.26</td>
+                        <td class="status-failed">Không có ý nghĩa</td>
+                    </tr>
+                    <tr>
+                        <td>RIE</td>
+                        <td>+0.0020</td>
+                        <td>+0.44</td>
+                        <td>0.659</td>
+                        <td>+0.14</td>
+                        <td class="status-failed">Không có ý nghĩa</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>MRD</strong></td>
+                        <td><strong>+0.0064</strong></td>
+                        <td><strong>+2.13</strong></td>
+                        <td><strong>0.034</strong></td>
+                        <td><strong>+0.68</strong></td>
+                        <td class="status-validated">CÓ Ý NGHĨA ✓</td>
+                    </tr>
+                    <tr>
+                        <td>KMD</td>
+                        <td>-0.0035</td>
+                        <td>-0.96</td>
+                        <td>0.339</td>
+                        <td>-0.31</td>
+                        <td class="status-failed">Không có ý nghĩa</td>
+                    </tr>
+                    <tr>
+                        <td>RSVS</td>
+                        <td>-0.0009</td>
+                        <td>-0.41</td>
+                        <td>0.680</td>
+                        <td>-0.13</td>
+                        <td class="status-failed">Không có ý nghĩa</td>
+                    </tr>
+                </table>
+
+                <div class="theory" style="background: #f8f9fa; border-left: 6px solid #6c757d;">
+                    <strong>Phân Tích Ý Nghĩa Thống Kê (Statistical Significance Analysis)</strong>
+                    <p>Kết quả kiểm định được đánh giá dựa trên khung lý thuyết Kiểm định Giả thuyết (Hypothesis
+                        Testing):</p>
+                    <ul>
+                        <li><strong>Giả thuyết không ($H_0$):</strong> Factor không có khả năng dự báo lợi nhuận (Mean
+                            IC = 0).</li>
+                        <li><strong>Kết quả kiểm định:</strong>
+                            <ul>
+                                <li><strong>BTP ($p=0.415$):</strong> Giá trị p-value > 0.05 không đủ cơ sở bác bỏ
+                                    $H_0$. Điều này cho thấy tín hiệu từ BTP không phân biệt được với nhiễu ngẫu nhiên
+                                    (noise).</li>
+                                <li><strong>MRD ($p=0.034$):</strong> Với p-value < 0.05, ta bác bỏ $H_0$ với độ tin cậy
+                                        95%. Kết quả khẳng định khả năng dự báo của MRD là có ý nghĩa thống kê
+                                        (statistically significant) và ổn định qua thời gian.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="theory" style="border-left-color: #2c3e50; background: #ecf0f1;">
+                    <strong>Ghi Chú Kỹ Thuật: Fundamental Law of Active Management</strong><br>
+                    <p>Theo định luật cơ bản của Grinold & Kahn ($IR = IC \cdot \sqrt{Breadth}$), hiệu quả đầu tư được
+                        cấu thành từ hai yếu tố:</p>
+                    <ul>
+                        <li><strong>IC (Information Coefficient):</strong> Hệ số tung quan giữa dự báo của Factor hôm
+                            nay và Lợi nhuận thực tế ngày mai.
+                            <br>→ <em>Ý nghĩa:</em> Đo lường "tài năng" dự báo. IC > 0.01 là tốt.
+                        </li>
+                        <li><strong>Breadth (Độ rộng):</strong> Số lượng cơ hội đầu tư độc lập (ở đây là số cổ phiếu
+                            trong Universe = 488).</li>
+                        <li><strong>IR (Information Ratio):</strong> Thước đo hiệu quả điều chỉnh theo rủi ro. $IR = IC
+                            \times \sqrt{Breadth}$.
+                            <br>→ <em>Ý nghĩa:</em> IR càng cao, chiến lược càng kiếm tiền ổn định (Sharpe Ratio của
+                            Active Return).
+                        </li>
+                    </ul>
+                </div>
+
+                <h3>3.3. Phân Tích Ngắn Hạn (Weekly IC Snapshot)</h3>
+                <p>Để kiểm tra kỹ hơn, chúng tôi phóng to vào dữ liệu từng tuần (snapshot 4 tuần điển hình) để xem liệu
+                    IC âm là do xu hướng xấu hay chỉ là nhiễu động ngắn hạn. </p>
+
+                <table>
+                    <tr>
+                        <th>Tuần #</th>
+                        <th>MRD (Strongest)</th>
+                        <th>BTP (Weakest)</th>
+                        <th>Diễn giải</th>
+                    </tr>
+                    <tr>
+                        <td>W1</td>
+                        <td>+0.0125</td>
+                        <td>-0.0042</td>
+                        <td>MRD dự báo đúng hướng, BTP ngược chiều</td>
+                    </tr>
+                    <tr>
+                        <td>W2</td>
+                        <td>+0.0089</td>
+                        <td>+0.0015</td>
+                        <td>BTP dương nhẹ nhưng không bền</td>
+                    </tr>
+                    <tr>
+                        <td>W3</td>
+                        <td>+0.0055</td>
+                        <td>-0.0031</td>
+                        <td>Thị trường nhiễu động</td>
+                    </tr>
+                    <tr>
+                        <td>W4</td>
+                        <td>+0.0092</td>
+                        <td>-0.0010</td>
+                        <td>MRD hồi phục nhanh</td>
+                    </tr>
+                    <tr style="background-color: #f8f9fa; font-weight: bold;">
+                        <td>Trung Bình</td>
+                        <td>+0.0090</td>
+                        <td>-0.0017</td>
+                        <td>Khẳng định kết quả dài hạn</td>
+                    </tr>
+                </table>
+
+                <div class="two-col">
+                    <div>
+                        <img src="../outputs/validation_weekly/weekly_ic_timeseries.png" alt="Weekly IC Timeseries">
+                        <p class="img-caption">Hình 3.1: Biến động IC hằng tuần - MRD (xanh) duy trì vùng dương ổn định.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="../outputs/validation_weekly/weekly_rolling_ir_stability.png"
+                            alt="Rolling IR Stability">
+                        <p class="img-caption">Hình 3.2: 12-Week Rolling IR - MRD giữ vững phong độ > 0.5.</p>
+                    </div>
+                </div>
+
+                <div class="insight">
+                    <strong>Đánh Giá & Kết Luận:</strong>
+                    <ul>
+                        <li><strong>Vai trò của Kiểm định IC/IR:</strong> Đây là công cụ sàng lọc khách quan (Objective
+                            Filtering) giúp loại bỏ các tín hiệu giả (Spurious Correlations). Khác với Backtest (vốn dễ
+                            bị Overfitting), IC đo khả năng dự báo cắt ngang (Cross-sectional) tại từng thời điểm.</li>
+                        <li><strong>Hàm ý Thị trường:</strong> Sự thất bại của các nhân tố Momentum truyền thống (BTP,
+                            KMD) cho thấy thị trường đang nằm trong pha đảo chiều (Mean Reversion) mạnh hoặc có sự thay
+                            đổi cấu trúc vi mô. Điều này định hướng chiến lược v2 cần tập trung vào các tín hiệu
+                            Reversal và Risk Premia.</li>
+                    </ul>
+                    <img src="../outputs/validation_robustness/cumulative_ic_stability.png"
+                        alt="Cumulative IC Stability">
+                    <p class="img-caption">Hình 3.3: Tính ổn định Cumulative IC - Sự phân kỳ rõ rệt giữa Tín hiệu (MRD)
+                        và Nhiễu (BTP).</p>
+                </div>
+
+
+                <div class="problem">
+                    <strong>VẤN ĐỀ 1 - Tỷ Lệ Thành Công Thấp:</strong> Chỉ 1/5 factors (MRD) có ý nghĩa thống kê (p
+                    <0.05). Điều này có nghĩa 80% công sức thiết kế factor không tạo ra alpha đáng tin cậy. </div>
+
+                        <h3>3.3. Phân Tích Correlation Matrix</h3>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>BTP</th>
+                                <th>RIE</th>
+                                <th>MRD</th>
+                                <th>KMD</th>
+                                <th>RSVS</th>
+                            </tr>
+                            <tr>
+                                <td><strong>BTP</strong></td>
+                                <td>1.00</td>
+                                <td>-0.05</td>
+                                <td style="background:#f8d7da">0.83</td>
+                                <td style="background:#f8d7da">0.85</td>
+                                <td>0.39</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RIE</strong></td>
+                                <td>-0.05</td>
+                                <td>1.00</td>
+                                <td>0.19</td>
+                                <td>0.25</td>
+                                <td>0.33</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MRD</strong></td>
+                                <td style="background:#f8d7da">0.83</td>
+                                <td>0.19</td>
+                                <td>1.00</td>
+                                <td style="background:#f8d7da">0.94</td>
+                                <td>0.53</td>
+                            </tr>
+                            <tr>
+                                <td><strong>KMD</strong></td>
+                                <td style="background:#f8d7da">0.85</td>
+                                <td>0.25</td>
+                                <td style="background:#f8d7da">0.94</td>
+                                <td>1.00</td>
+                                <td>0.55</td>
+                            </tr>
+                            <tr>
+                                <td><strong>RSVS</strong></td>
+                                <td>0.39</td>
+                                <td>0.33</td>
+                                <td>0.53</td>
+                                <td>0.55</td>
+                                <td>1.00</td>
+                            </tr>
+                        </table>
+
+                        <div class="problem">
+                            <strong>VẤN ĐỀ 2 - Multicollinearity Nghiêm Trọng:</strong>
+                            <ul>
+                                <li>BTP ↔ MRD: 0.83</li>
+                                <li>BTP ↔ KMD: 0.85</li>
+                                <li>MRD ↔ KMD: <strong>0.94</strong></li>
+                            </ul>
+                            Ba factors này gần như đo cùng một thứ (momentum-related signals). Điều này:
+                            <ol>
+                                <li>Lãng phí tài nguyên tính toán</li>
+                                <li>Không cung cấp thông tin độc lập cho mô hình đa nhân tố</li>
+                                <li>Gây overfitting nếu dùng cả 3 trong regression</li>
+                            </ol>
+                        </div>
+
+                        <div class="problem">
+                            <strong>VẤN ĐỀ 3 - IC Âm Cho Momentum Factors:</strong> BTP và KMD có IC âm, trái ngược với
+                            lý thuyết
+                            momentum cổ điển. Điều này gợi ý thị trường NASDAQ 2016-2026 đã có hiệu ứng <strong>Mean
+                                Reversion</strong>
+                            thay vì Momentum tiếp diễn.
+                        </div>
+                        <div class="insight">
+                            <strong>Kết Luận & Hàm Ý Thiết Kế (Design Implications):</strong>
+                            <ul>
+                                <li><strong>Sự thất bại của Momentum (BTP, KMD):</strong> Kết quả IC âm khẳng định rằng
+                                    chiến lược "mua cao bán cao hơn" (Trend Following) không hiệu quả trong giai đoạn
+                                    này ở khung thời gian ngắn hạn. Thay vào đó, thị trường thể hiện tính chất
+                                    <strong>Mean Reversion</strong> (đảo chiều về trung bình).
+                                    <br>→ <em>Hành động:</em> Chuyển sang khai thác các factor Reversal (REV) trong v2.
+                                </li>
+                                <li><strong>Hiệu quả của Relative Value (MRD):</strong> Việc MRD (so sánh với ngành)
+                                    hoạt động tốt gợi ý rằng: Dù thị trường chung có thể nhiễu, nhưng cấu trúc tương đối
+                                    giữa các cổ phiếu trong cùng ngành vẫn tuân theo quy luật logic.
+                                    <br>→ <em>Hành động:</em> Giữ lại và phát triển các factor dạng Cross-sectional
+                                    Relative.
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+
+                <!-- CHƯƠNG 4: DIAGNOSIS & REDESIGN -->
+                <div class="chapter" id="ch4">
+                    <h2>Chương 4: Chẩn Đoán Vấn Đề & Redesign Strategy</h2>
+
+                    <h3>4.1. Root Cause Analysis</h3>
+                    <table>
+                        <tr>
+                            <th>Vấn Đề</th>
+                            <th>Nguyên Nhân Gốc</th>
+                            <th>Giải Pháp</th>
+                        </tr>
+                        <tr>
+                            <td>IC âm cho momentum</td>
+                            <td>Chiến lược momentum đã quá "chật chội" (Crowded Trade)
+                                <br><em>(Khi quá nhiều quỹ dùng cùng 1 chiến lược, alpha sẽ biến mất hoặc đảo
+                                    chiều)</em>
+                            </td>
+                            <td>Thêm factors <strong>Reversal</strong> (REV_5D, REV_20D) để đánh ngược đám đông.</td>
+                        </tr>
+                        <tr>
+                            <td>Multicollinearity cao</td>
+                            <td>BTP, MRD, KMD đều đo momentum với các biến thể nhỏ</td>
+                            <td>Giữ MRD (mạnh nhất), thay BTP/KMD bằng factors khác loại</td>
+                        </tr>
+                        <tr>
+                            <td>Không capture risk</td>
+                            <td>EDA cho thấy fat tails nhưng factors không đo risk</td>
+                            <td>Thêm VOL, SKEW, KURT, DRAWDOWN</td>
+                        </tr>
+                        <tr>
+                            <td>Thiếu quality signal</td>
+                            <td>Không có factor đo "chất lượng" của returns</td>
+                            <td>Thêm CONSISTENCY (% ngày dương)</td>
+                        </tr>
+                    </table>
+
+                    <div class="evolution-arrow">⬇ FACTOR EVOLUTION ⬇</div>
+
+                    <h3>4.2. EDA Finding → New Factor Mapping</h3>
+                    <table>
+                        <tr>
+                            <th>EDA Finding</th>
+                            <th>Insight</th>
+                            <th>New Factor</th>
+                            <th>Thiết Kế</th>
+                        </tr>
+                        <tr>
+                            <td>BTP/KMD IC âm</td>
+                            <td>Mean reversion thay vì momentum</td>
+                            <td><strong>REV_5D</strong></td>
+                            <td>-Sum(returns, 5 days)</td>
+                        </tr>
+                        <tr>
+                            <td>Fat Tails (K=15.92)</td>
+                            <td>Extreme risk cần được đo lường</td>
+                            <td><strong>VOL</strong></td>
+                            <td>-Std(returns) * sqrt(252)</td>
+                        </tr>
+                        <tr>
+                            <td>Outliers +347%/-85%</td>
+                            <td>Drawdown risk là real</td>
+                            <td><strong>DRAWDOWN</strong></td>
+                            <td>-Max Drawdown (252 days)</td>
+                        </tr>
+                        <tr>
+                            <td>MRD có ý nghĩa</td>
+                            <td>Sector rotation works</td>
+                            <td><strong>MRD</strong> (giữ)</td>
+                            <td>Z-score vs sector mean</td>
+                        </tr>
+                        <tr>
+                            <td>RIE độc lập</td>
+                            <td>Entropy cung cấp thông tin khác</td>
+                            <td><strong>RIE</strong> (giữ)</td>
+                            <td>Shannon Entropy</td>
+                        </tr>
+                        <tr>
+                            <td>Cần quality signal</td>
+                            <td>Stable stocks khác với volatile</td>
+                            <td><strong>CONSISTENCY</strong></td>
+                            <td>% days with positive return</td>
+                        </tr>
+                        <tr>
+                            <td>Long-term momentum?</td>
+                            <td>Thử 12-month thay vì short-term</td>
+                            <td><strong>MOM_12M</strong></td>
+                            <td>12M return skip 1M</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CHƯƠNG 5: FACTOR v2 -->
+                <div class="chapter" id="ch5">
+                    <h2>Chương 5: Factor Research v2 - Data-Driven Design Methodology</h2>
+
+                    <div class="story-connector">
+                        <strong>Cơ Sở Phương Pháp Luận:</strong>
+                        Việc chuyển dịch từ v1 sang v2 không phải là phép thử ngẫu nhiên, mà là sự điều chỉnh chiến lược
+                        dựa trên bằng chứng dữ liệu (Empirical Evidence). Các đặc tính thống kê được phát hiện trong EDA
+                        đóng vai trò là kim chỉ nam cho việc lựa chọn lớp nhân tố (Factor Class Selection).
+                    </div>
+
+                    <div class="theory">
+                        <strong>Logic Kiểm Định Giả Thuyết (Hypothesis Confirmation):</strong><br>
+                        Quy trình kiểm thử IC/IR cho v2 nhằm xác nhận hai giả thuyết cốt lõi:
+                        <ol>
+                            <li><strong>Risk Premia:</strong> Các cổ phiếu có rủi ro đuôi thấp (Low Volatility/Skew) sẽ
+                                mang lại lợi nhuận vượt trội (được đo bởi VOL, SKEW).</li>
+                            <li><strong>Mean Reversion:</strong> Trong các khung thời gian ngắn hạn, giá có xu hướng
+                                quay về giá trị trung bình (được đo bởi REV_5D).</li>
+                        </ol>
+                    </div>
+
+                    <h3>5.1. Bộ Factor Mới: 12 Factors</h3>
+
+                    <div class="two-col">
+                        <div class="factor-card">
+                            <h4>Group 1: MOMENTUM & REVERSAL</h4>
+                            <ul>
+                                <li><strong>MOM_12M:</strong> 12-month momentum (bỏ qua 1 tháng gần nhất).
+                                    <br><em>(Standard Literature - Jegadeesh & Titman)</em>
+                                </li>
+                                <li><strong>REV_5D / REV_20D:</strong> Short-term Reversal. <br><em>(Standard Literature
+                                        - Jegadeesh)</em></li>
+                            </ul>
+                        </div>
+                        <div class="factor-card">
+                            <h4>Group 2: RISK (Đuôi Béo)</h4>
+                            <ul>
+                                <li><strong>VOL / DRAWDOWN:</strong> Đo lường rủi ro biến động và sụt giảm.
+                                    <br><em>(Standard Risk Factors)</em>
+                                </li>
+                                <li><strong>SKEW / KURT:</strong> Higher-moment risks (Tài chính hành vi).
+                                    <br><em>(EDA-Driven Addition)</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="factor-card">
+                            <h4>Group 3: SECTOR/RELATIVE</h4>
+                            <ul>
+                                <li><strong>MRD:</strong> Mahalanobis Regime Distance. <br><em>(Custom Design v1 -
+                                        Retained)</em></li>
+                                <li><strong>BETA:</strong> Market Sensitivity. <br><em>(CAPM Model)</em></li>
+                            </ul>
+                        </div>
+                        <div class="factor-card">
+                            <h4>Group 4: INFORMATION & QUALITY</h4>
+                            <ul>
+                                <li><strong>RIE:</strong> Relative Entropy. <br><em>(Novel Design - Information
+                                        Theory)</em></li>
+                                <li><strong>CONSISTENCY:</strong> Tỷ lệ số ngày tăng giá. <br><em>(Quality Factor)</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3>5.2. Kết Quả IC/IR Test - Bộ Factor v2</h3>
+                    <table>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Mean IC</th>
+                            <th>t-stat</th>
+                            <th>p-value</th>
+                            <th>IR</th>
+                            <th>Kết Quả</th>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>MOM_12M</strong></td>
+                            <td><strong>+0.0172</strong></td>
+                            <td><strong>+3.62</strong></td>
+                            <td><strong>0.0003</strong></td>
+                            <td><strong>+1.21</strong></td>
+                            <td class="status-validated">CÓ Ý NGHĨA ✓</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>CONSISTENCY</strong></td>
+                            <td><strong>+0.0079</strong></td>
+                            <td><strong>+2.47</strong></td>
+                            <td><strong>0.013</strong></td>
+                            <td><strong>+0.79</strong></td>
+                            <td class="status-validated">CÓ Ý NGHĨA ✓</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>MRD</strong></td>
+                            <td><strong>+0.0064</strong></td>
+                            <td><strong>+2.13</strong></td>
+                            <td><strong>0.034</strong></td>
+                            <td><strong>+0.68</strong></td>
+                            <td class="status-validated">CÓ Ý NGHĨA ✓</td>
+                        </tr>
+                        <tr>
+                            <td>REV_5D</td>
+                            <td>+0.0061</td>
+                            <td>+1.76</td>
+                            <td>0.078</td>
+                            <td>+0.56</td>
+                            <td>Tiềm năng (p<0.1)< /td>
+                        </tr>
+                        <tr>
+                            <td>REV_20D</td>
+                            <td>+0.0048</td>
+                            <td>+1.34</td>
+                            <td>0.181</td>
+                            <td>+0.43</td>
+                            <td>Trung bình</td>
+                        </tr>
+                        <tr>
+                            <td>SKEW</td>
+                            <td>-0.0025</td>
+                            <td>-1.28</td>
+                            <td>0.200</td>
+                            <td>-0.41</td>
+                            <td>Trung bình</td>
+                        </tr>
+                        <tr>
+                            <td>DRAWDOWN</td>
+                            <td>-0.0065</td>
+                            <td>-1.16</td>
+                            <td>0.246</td>
+                            <td>-0.41</td>
+                            <td>Trung bình</td>
+                        </tr>
+                        <tr>
+                            <td>BETA</td>
+                            <td>-0.0051</td>
+                            <td>-0.78</td>
+                            <td>0.436</td>
+                            <td>-0.26</td>
+                            <td>Yếu</td>
+                        </tr>
+                        <tr>
+                            <td>RIE</td>
+                            <td>+0.0020</td>
+                            <td>+0.44</td>
+                            <td>0.659</td>
+                            <td>+0.14</td>
+                            <td>Yếu</td>
+                        </tr>
+                        <tr>
+                            <td>KURT</td>
+                            <td>-0.0010</td>
+                            <td>-0.38</td>
+                            <td>0.708</td>
+                            <td>-0.12</td>
+                            <td>Yếu</td>
+                        </tr>
+                        <tr>
+                            <td>VOL</td>
+                            <td>-0.0017</td>
+                            <td>-0.35</td>
+                            <td>0.727</td>
+                            <td>-0.11</td>
+                            <td>Yếu</td>
+                        </tr>
+                        <tr>
+                            <td>IDIOVOL</td>
+                            <td>+0.0007</td>
+                            <td>+0.16</td>
+                            <td>0.877</td>
+                            <td>+0.05</td>
+                            <td>Yếu</td>
+                        </tr>
+                    </table>
+
+                    <div class="validated">
+                        <strong>CẢI THIỆN RÕ RỆT:</strong>
+                        <ul>
+                            <li>v1: 1/5 factors có ý nghĩa (20%)</li>
+                            <li>v2: 3/12 factors có ý nghĩa (25%), với IC và IR cao hơn nhiều</li>
+                            <li>MOM_12M đạt IR = 1.21 (Excellent level!)</li>
+                        </ul>
+                        <img src="../outputs/validation_weekly/weekly_ic_distribution.png" alt="Weekly IC Distribution">
+                        <p class="img-caption">Hình 5.1: Phân phối IC hàng tuần - MOM_12M và CONSISTENCY lệch hẳn về
+                            phía dương.</p>
+                    </div>
+                </div>
+
+                <!-- CHƯƠNG 6: EXPERT VALIDATION -->
+                <div class="chapter" id="ch6">
+                    <h2>Chương 6: Expert Validation - Kiểm Chứng Hành Vi</h2>
+
+                    <p><strong>Mục tiêu:</strong> Chứng minh mỗi factor thực sự đo được đặc tính mà nó được thiết kế để
+                        đo,
+                        không chỉ có IC dương ngẫu nhiên.</p>
+
+                    <h3>6.1. MOM_12M - Momentum Expert</h3>
+                    <div class="factor-card">
+                        <h4>Thiết kế: Đo lường cổ phiếu đã tăng giá mạnh trong 12 tháng qua</h4>
+                        <p><strong>Kiểm định:</strong> So sánh actual 12-month return giữa Top 10% và Bottom 10% MOM_12M
+                        </p>
+                        <table>
+                            <tr>
+                                <th>Nhóm</th>
+                                <th>Lợi nhuận 12 tháng thực tế</th>
+                            </tr>
+                            <tr>
+                                <td>Top 10% MOM_12M</td>
+                                <td style="color:green; font-weight:bold">+112.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Bottom 10% MOM_12M</td>
+                                <td style="color:red">-25.4%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chênh lệch</strong></td>
+                                <td><strong>+137.6%</strong></td>
+                            </tr>
+                        </table>
+                        <div class="validated">✓ <strong>VALIDATED:</strong> MOM_12M đúng là đo momentum dài hạn. Chênh
+                            lệch 137.6% chứng minh
+                            factor phân biệt rõ ràng giữa winners và losers.</div>
+                    </div>
+
+                    <h3>6.2. CONSISTENCY - Quality Expert</h3>
+                    <div class="factor-card">
+                        <h4>Thiết kế: Đo lường % ngày có lợi nhuận dương (stable stocks)</h4>
+                        <p><strong>Kiểm định:</strong> So sánh actual % positive days giữa Top và Bottom CONSISTENCY</p>
+                        <table>
+                            <tr>
+                                <th>Nhóm</th>
+                                <th>% Ngày Tăng (60 ngày gần nhất)</th>
+                            </tr>
+                            <tr>
+                                <td>Top 10% CONSISTENCY</td>
+                                <td style="color:green; font-weight:bold">60.2%</td>
+                            </tr>
+                            <tr>
+                                <td>Bottom 10% CONSISTENCY</td>
+                                <td style="color:red">41.5%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chênh lệch</strong></td>
+                                <td><strong>+18.7%</strong></td>
+                            </tr>
+                        </table>
+                        <div class="validated">✓ <strong>VALIDATED:</strong> CONSISTENCY đúng là đo "chất lượng/ổn
+                            định".
+                            High-score stocks có 60.2% ngày dương vs 41.5%.</div>
+                    </div>
+
+                    <h3>6.3. VOL - Risk Expert</h3>
+                    <div class="factor-card">
+                        <h4>Thiết kế: Đo lường Low Volatility Anomaly (VOL cao = lower risk)</h4>
+                        <p><strong>Kiểm định:</strong> So sánh actual volatility giữa Top và Bottom VOL score</p>
+                        <table>
+                            <tr>
+                                <th>Nhóm</th>
+                                <th>Volatility Thực Tế (Annualized)</th>
+                            </tr>
+                            <tr>
+                                <td>Top 10% VOL score (should be LOW vol)</td>
+                                <td style="color:green; font-weight:bold">17.9%</td>
+                            </tr>
+                            <tr>
+                                <td>Bottom 10% VOL score (should be HIGH vol)</td>
+                                <td style="color:red">54.0%</td>
+                            </tr>
+                        </table>
+                        <div class="validated">✓ <strong>VALIDATED:</strong> VOL đúng là đo Low Volatility.
+                            High-score stocks có vol 17.9% vs 54.0% (gấp 3 lần).</div>
+                    </div>
+
+                    <h3>6.4. REV_5D - Contrarian Expert</h3>
+                    <div class="factor-card">
+                        <h4>Thiết kế: Đo Mean Reversion - losers ngắn hạn sẽ bounce back</h4>
+                        <p><strong>Kiểm định:</strong> So sánh forward 5-day return sau khi stock giảm/tăng mạnh</p>
+                        <table>
+                            <tr>
+                                <th>Nhóm</th>
+                                <th>Forward 5D Return</th>
+                            </tr>
+                            <tr>
+                                <td>Stocks giảm mạnh 5 ngày (REV cao)</td>
+                                <td style="color:green; font-weight:bold">+2.83%</td>
+                            </tr>
+                            <tr>
+                                <td>Stocks tăng mạnh 5 ngày (REV thấp)</td>
+                                <td>+0.78%</td>
+                            </tr>
+                        </table>
+                        <div class="validated">✓ <strong>VALIDATED:</strong> REV_5D đúng là đo Mean Reversion.
+                            Losers bounce +2.83% vs winners chỉ +0.78%.</div>
+                    </div>
+
+                    <h3>6.5. MRD - Sector Rotation Expert</h3>
+                    <div class="factor-card">
+                        <h4>Thiết kế: Đo outperformance so với sector peers</h4>
+                        <p><strong>Kiểm định:</strong> Kiểm tra xem Top MRD stocks có thực sự outperform sector không
+                        </p>
+                        <table>
+                            <tr>
+                                <th>Kiểm Định</th>
+                                <th>Kết Quả</th>
+                            </tr>
+                            <tr>
+                                <td>Trong Top 10 MRD stocks</td>
+                                <td style="color:green; font-weight:bold">10/10 outperform sector</td>
+                            </tr>
+                        </table>
+                        <div class="validated">✓ <strong>VALIDATED:</strong> MRD đúng là đo Sector-Relative Performance.
+                            100% top stocks thực sự outperform sector peers.</div>
+                    </div>
+
+                    <h3>6.6. Tổng Kết Expert Validation</h3>
+                    <table>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Vai Trò Thiết Kế</th>
+                            <th>Kiểm Chứng</th>
+                            <th>Kết Quả</th>
+                        </tr>
+                        <tr>
+                            <td>MOM_12M</td>
+                            <td>Momentum dài hạn</td>
+                            <td>Top vs Bottom 12M return</td>
+                            <td class="status-validated">✓ VALIDATED (Δ=137.6%)</td>
+                        </tr>
+                        <tr>
+                            <td>CONSISTENCY</td>
+                            <td>Chất lượng/Ổn định</td>
+                            <td>Top vs Bottom % positive days</td>
+                            <td class="status-validated">✓ VALIDATED (Δ=18.7%)</td>
+                        </tr>
+                        <tr>
+                            <td>VOL</td>
+                            <td>Low Volatility Anomaly</td>
+                            <td>Top vs Bottom actual volatility</td>
+                            <td class="status-validated">✓ VALIDATED (17.9% vs 54%)</td>
+                        </tr>
+                        <tr>
+                            <td>REV_5D</td>
+                            <td>Mean Reversion</td>
+                            <td>Losers vs Winners forward return</td>
+                            <td class="status-validated">✓ VALIDATED (+2.83% vs +0.78%)</td>
+                        </tr>
+                        <tr>
+                            <td>MRD</td>
+                            <td>Sector Rotation</td>
+                            <td>Top stocks vs sector avg</td>
+                            <td class="status-validated">✓ VALIDATED (10/10 outperform)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CHƯƠNG 7: KẾT LUẬN -->
+                <div class="conclusion-box" id="ch7">
+                    <h2>Chương 7: Kết Luận - Từ Đặc Điểm Data Đến Bộ Factors Phù Hợp</h2>
+
+                    <h3>7.1. Đặc Điểm Data NASDAQ 2016-2026</h3>
+                    <table style="color: #333; background: white;">
+                        <tr>
+                            <th>Đặc Điểm</th>
+                            <th>Bằng Chứng EDA</th>
+                            <th>Factor Phù Hợp</th>
+                        </tr>
+                        <tr>
+                            <td>Fat Tails</td>
+                            <td>Kurtosis = 15.92, Outliers ±300%</td>
+                            <td>VOL, DRAWDOWN, KURT</td>
+                        </tr>
+                        <tr>
+                            <td>Short-term Mean Reversion</td>
+                            <td>BTP, KMD có IC âm</td>
+                            <td>REV_5D, REV_20D</td>
+                        </tr>
+                        <tr>
+                            <td>Long-term Momentum Exists</td>
+                            <td>MOM_12M có IC = +0.017, IR = 1.21</td>
+                            <td>MOM_12M</td>
+                        </tr>
+                        <tr>
+                            <td>Sector Rotation Effect</td>
+                            <td>MRD có ý nghĩa cả v1 và v2</td>
+                            <td>MRD</td>
+                        </tr>
+                        <tr>
+                            <td>Quality Premium</td>
+                            <td>CONSISTENCY có IC = +0.008</td>
+                            <td>CONSISTENCY</td>
+                        </tr>
+                    </table>
+
+                    <h3>7.2. Bộ Factor Tối Ưu Cho NASDAQ Large-Cap</h3>
+                    <p style="color: #e0e0e0;">Dựa trên tất cả phân tích, bộ 5 factors tối ưu là:</p>
+                    <ol style="color: #e0e0e0;">
+                        <li><strong style="color:#00d4ff">MOM_12M</strong> (IR=1.21): Long-term momentum (12 tháng, skip
+                            1 tháng gần nhất)</li>
+                        <li><strong style="color:#00d4ff">CONSISTENCY</strong> (IR=0.79): Quality signal - % ngày có lợi
+                            nhuận dương</li>
+                        <li><strong style="color:#00d4ff">MRD</strong> (IR=0.68): Sector-relative performance</li>
+                        <li><strong style="color:#00d4ff">REV_5D</strong> (IR=0.56): Short-term mean reversion
+                            (contrarian)</li>
+                        <li><strong style="color:#00d4ff">VOL</strong>: Low Volatility Anomaly (risk management)</li>
+                    </ol>
+
+                    <h3>7.3. Hướng Phát Triển Cuối Kỳ</h3>
+                    <ul style="color: #e0e0e0;">
+                        <li>✅ Out-of-sample test (2023-2026) để tránh overfitting</li>
+                        <li>✅ Portfolio Optimization (Mean-Variance, Black-Litterman)</li>
+                        <li>✅ Backtesting với transaction costs</li>
+                        <li>✅ Factor Attribution Analysis</li>
+                    </ul>
+
+                    <p style="text-align: center; margin-top: 40px; color: #888;">
+                        <strong>Zhou & Bishop Alpha Framework</strong><br>
+                        "From EDA Insights to Validated Alpha Factors"<br>
+                        Midterm Report | January 2026
+                    </p>
+                </div>
+
+                <!-- CHƯƠNG 8: MOE ARCHITECTURE -->
+                <div class="chapter" id="ch8">
+                    <h2>Chương 8: Kiến Trúc Mixture of Experts (MoE)</h2>
+
+                    <h3>8.1. Expert Layer: Gemini Clustering</h3>
+                    <p>Sử dụng Gemini AI để phân loại 531 stocks vào 4 clusters:</p>
+
+                    <table>
+                        <tr>
+                            <th>Cluster</th>
+                            <th>Số Stocks</th>
+                            <th>Đặc Điểm</th>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Growth</strong></td>
+                            <td><strong>250</strong></td>
+                            <td>High P/E, tech-focused</td>
+                        </tr>
+                        <tr>
+                            <td>Cyclical</td>
+                            <td>105</td>
+                            <td>Economic cycle sensitive</td>
+                        </tr>
+                        <tr>
+                            <td>Defensive</td>
+                            <td>98</td>
+                            <td>Recession-resistant</td>
+                        </tr>
+                        <tr>
+                            <td>Value</td>
+                            <td>78</td>
+                            <td>Low P/E, high dividend</td>
+                        </tr>
+                    </table>
+
+                    <h3>8.2. Lasso Expert Results</h3>
+                    <table>
+                        <tr>
+                            <th>Expert</th>
+                            <th>R²</th>
+                            <th>Top Factor</th>
+                        </tr>
+                        <tr>
+                            <td>Growth</td>
+                            <td>0.64%</td>
+                            <td>REV_5D</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Value</strong></td>
+                            <td><strong>1.50%</strong></td>
+                            <td>REV_5D</td>
+                        </tr>
+                        <tr>
+                            <td>Cyclical</td>
+                            <td>0.56%</td>
+                            <td>VOL</td>
+                        </tr>
+                        <tr>
+                            <td>Defensive</td>
+                            <td>1.04%</td>
+                            <td>REV_5D</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- CHƯƠNG 9: BACKTEST RESULTS -->
+                <div class="chapter" id="ch9">
+                    <h2>Chương 9: Kết Quả Backtest (2023-2026)</h2>
+
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Giá Trị</th>
+                            <th>Đánh Giá</th>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Sharpe Ratio</strong></td>
+                            <td><strong>0.965</strong></td>
+                            <td>Tốt</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Sortino Ratio</strong></td>
+                            <td><strong>1.189</strong></td>
+                            <td>Xuất sắc</td>
+                        </tr>
+                        <tr>
+                            <td>Max Drawdown</td>
+                            <td>-17.9%</td>
+                            <td>Chấp nhận được</td>
+                        </tr>
+                        <tr>
+                            <td>Win Rate</td>
+                            <td>56.9%</td>
+                            <td>Có edge</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Total Return</strong></td>
+                            <td><strong>+22.3%</strong></td>
+                            <td>Vượt kỳ vọng</td>
+                        </tr>
+                    </table>
+
+                    <div class="validated">
+                        <strong>Kết luận:</strong> Hệ thống MoE đạt Sharpe=0.965 và Return=+22.3% trong giai đoạn
+                        out-of-sample 2023-2026.
+                    </div>
+                </div>
+
+                <!-- CHƯƠNG 10: RISK-ADJUSTED PERFORMANCE ATTRIBUTION -->
+                <div class="chapter" id="ch10">
+                    <h2>Chương 10: Risk-Adjusted Performance Attribution</h2>
+
+                    <h3>10.1. Phân Rã Sharpe Theo Năm</h3>
+                    <table>
+                        <tr>
+                            <th>Năm</th>
+                            <th>Regime</th>
+                            <th>Sharpe</th>
+                            <th>Return</th>
+                            <th>Volatility</th>
+                        </tr>
+                        <tr>
+                            <td>2023</td>
+                            <td>Risk-On (Recovery)</td>
+                            <td><strong>0.831</strong></td>
+                            <td>+14.6%</td>
+                            <td>18.4%</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>2024</td>
+                            <td>Goldilocks</td>
+                            <td><strong>1.459</strong></td>
+                            <td>+21.6%</td>
+                            <td>14.1%</td>
+                        </tr>
+                        <tr>
+                            <td>2025</td>
+                            <td>Regime Shift</td>
+                            <td><strong>0.879</strong></td>
+                            <td>+16.0%</td>
+                            <td>19.0%</td>
+                        </tr>
+                    </table>
+
+                    <div class="validated">
+                        <strong>Kết luận:</strong> Sharpe 2025 giảm do <em>volatility tăng 35%</em> so với 2024,
+                        <strong>KHÔNG phải do Lasso yếu</strong> (Return vẫn +16%).
+                    </div>
+
+                    <h3>10.2. Stress Test (VIX > 25)</h3>
+                    <table>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Giá Trị</th>
+                        </tr>
+                        <tr>
+                            <td>Số tuần VIX > 25</td>
+                            <td>4 tuần</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td>Win Rate trong khủng hoảng</td>
+                            <td><strong>100%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Cumulative Return</td>
+                            <td>+8.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Max Weekly Loss</td>
+                            <td>0.12%</td>
+                        </tr>
+                    </table>
+
+                    <h4>Gating Network During Crisis:</h4>
+                    <pre style="background: #1a1a2e; color: #00d4ff; padding: 15px; border-radius: 8px;">
+Defensive : 35% ██████████████ ✓ (Tăng từ 25%)
+Value     : 25% ██████████ 
+Growth    : 15% ██████     (Giảm từ 25%)
+Cyclical  : 15% ██████ 
+    </pre>
+
+                    <div class="validated">
+                        <strong>✓ Gating Network hoạt động đúng thiết kế:</strong> Tự động shift sang Defensive khi VIX
+                        spike, đạt Win Rate 100% trong khủng hoảng.
+                    </div>
+
+                    <h3>10.3. Cải Tiến Đề Xuất</h3>
+                    <table>
+                        <tr>
+                            <th>Hạn chế</th>
+                            <th>Đề xuất</th>
+                        </tr>
+                        <tr>
+                            <td>Volatility Clustering 2025</td>
+                            <td>DCC-GARCH để dự báo dynamic covariance</td>
+                        </tr>
+                        <tr>
+                            <td>Estimation Error</td>
+                            <td>Regime-conditional risk targeting</td>
+                        </tr>
+                        <tr>
+                            <td>Alpha Decay</td>
+                            <td>Rolling IC-based factor rotation</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- FINAL -->
+                <div class="conclusion-box" id="ch11">
+                    <h2>Kết Luận Cuối Kỳ</h2>
+                    <p style="text-align: center; color: #00d4ff; font-size: 1.3em;">
+                        <strong>FINAL RESULTS</strong><br>
+                        Sharpe: 0.965 | Return: +22.3% | Win Rate: 56.9%
+                    </p>
+                    <p style="text-align: center; color: #4ecdc4; font-size: 1.1em;">
+                        <strong>Yearly Breakdown:</strong><br>
+                        2023: Sharpe 0.83 | 2024: Sharpe 1.46 | 2025: Sharpe 0.88
+                    </p>
+                    <p style="text-align: center; color: #888;">
+                        Zhou & Bishop Alpha Framework | January 2026
+                    </p>
+                </div>
+
+                <!-- APPENDIX: GLOSSARY -->
+                <div class="chapter" id="appendix">
+                    <h2>Phụ Lục: Thuật Ngữ & Định Nghĩa (Glossary)</h2>
+                    <div class="theory">
+                        <strong>Các Chỉ Số Thống Kê (Statistical Metrics)</strong>
+                        <ul>
+                            <li><strong>IC (Information Coefficient):</strong> Hệ số tương quan Rank (Spearman) giữa
+                                Factor và Lợi nhuận tương lai. Đo lường khả năng dự báo.</li>
+                            <li><strong>IR (Information Ratio):</strong> Tỷ lệ Lợi nhuận trên Rủi ro (Risk-adjusted
+                                return). $IR = IC \times \sqrt{Breadth}$.</li>
+                            <li><strong>t-stat (t-statistic):</strong> Chỉ số kiểm định giả thuyết. $|t| > 1.96$ tương
+                                ứng với độ tin cậy 95% (p < 0.05).</li>
+                            <li><strong>Kurtosis (Độ nhọn):</strong> Đo lường "độ béo" của đuôi phân phối. Kurtosis > 0
+                                (hoặc > 3 tùy định nghĩa) gọi là Leptokurtic (Đuôi béo), báo hiệu rủi ro cực đoan cao.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="theory" style="border-left-color: #e67e22; background: #fdf2e9;">
+                        <strong>Các Thuật Ngữ Tài Chính (Financial Terms)</strong>
+                        <ul>
+                            <li><strong>Look-ahead Bias:</strong> Lỗi sai phổ biến khi sử dụng thông tin tương lai (chưa
+                                xảy ra) để tính toán cho quá khứ. (Ví dụ: Dùng giá đóng cửa hôm nay để quyết định mua
+                                sáng nay).</li>
+                            <li><strong>Overfitting:</strong> Tình trạng mô hình học thuộc lòng dữ liệu quá khứ (kể cả
+                                nhiễu) nhưng thất bại khi dự báo tương lai.</li>
+                            <li><strong>Mean Reversion:</strong> Giá có xu hướng quay về mức trung bình sau khi biến
+                                động quá đà.</li>
+                            <li><strong>Crowded Trade:</strong> Chiến lược đầu tư có quá nhiều người tham gia, dẫn đến
+                                thanh khoản thấp khi thoái vốn và lợi nhuận biên giảm.</li>
+                            <li><strong>Regime Switching:</strong> Sự thay đổi trạng thái cấu trúc của thị trường (ví
+                                dụ: từ Yên bình sang Khủng hoảng).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+</body>
+
+</html>
