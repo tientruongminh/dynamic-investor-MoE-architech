@@ -1,0 +1,38 @@
+# Virtual environment
+venv/
+.venv/
+env/
+bin/
+lib/
+share/
+include/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Data and outputs
+data/
+outputs/
+outputs_clean/
+dashboard/outputs/
+*.csv
+*.parquet
+*.h5
+*.model
+*.joblib
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.html
+
+# IDE files
+.vscode/
+.idea/
+.DS_Store
